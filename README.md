@@ -15,13 +15,16 @@ max_memory_restart=100M # 该配置只有当后台启动时生效  每个进程�
 
 
 [static]
+
 include= mycc@D:\Project\miniWeb\src\cc,# 在这里配置http资源路径，以“,”分隔，配置的规范为：映射名@文件夹路径，例如abc@d:\e\f，则将d:\e\f 目录设置为http的资源文件目录，abc为通过http协议访问的路径前端前缀， 假设在d:\e\f下有一张图片 1.jpg，那么通过http访问1.jpg的路径为http://localhost:8001/abc/1.jpg  以此类推。
 
 
 [mime]
+
 types=css,js,html,jpg,png,txt,#可以通过本web服务浏览的文件类型(后缀)，通过","分隔
 
 
 [log]
+
 requestlog=true # 为true 则每个静态文件请求都将打印请求日志
 
