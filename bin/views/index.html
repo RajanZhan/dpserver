@@ -1,0 +1,33 @@
+<title> {{ title }} </title>
+<meta charset=UTF8>
+<H2>欢迎使用 DpServer v{{version}} </H2>
+<blockquote>
+    网站地址：https://<br>
+    技术邮箱：rajan.zhan@foxmail.com<br>
+    在使用过程中，遇到任何问题，可以登录我们的网站地址（github）或者发送邮箱给我们
+</blockquote>
+
+<fieldset>
+    <legend>映射目录</legend>
+    {{each staticMap  }}
+
+        {{if $value && $value[0] && $value[1]}}
+            {{ $value[0] }} ------ {{ $value[1] }} &nbsp;&nbsp; 
+            {{if $value[2] }}
+             <span style="color:red;">此目录不存在</span>
+            {{/if}}
+             <br>
+        {{/if}}
+        
+    {{/each }}
+</fieldset>
+
+
+<fieldset>
+    <legend>支持的文件类型</legend>
+    {{each mime  }}
+        {{ $value }}
+        <br>
+        
+    {{/each }}
+</fieldset>
