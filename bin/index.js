@@ -76,15 +76,26 @@ for (let p of staticConfigArr) {
 }
 
 app.get('/', (req, res) => {
-    res.render('index.html', {
-        title: 'DpServer',
-        version: "1.0.0",
-        staticMap,
-        mime,
-    })
+	if(config.boot.mode &&  config.boot.mode == "debug")
+	{
+		res.render('index.html', {
+			title: 'DpServer',
+			version: "1.0.0",
+			staticMap,
+			mime,
+		})
+	}
+	else
+	{
+		res.send(`
+		 <meta charset=utf8>
+		 <h2>working...</h2>
+		`);
+	}
+    
 })
 app.listen(config.boot.port, () => {
-    console.log(`(*^▽^*) DpServer 启动成功...`.brightGreen)
+    console.log(`(*^▽^*) DpServer 启动成功[${config.boot.mode &&config.boot.mode == "debug"?"debug":"release" }]...`.brightGreen)
     console.log(`(^_−)☆ 服务监听的端口为 ${config.boot.port}`.brightGreen)
     console.log(`(^_−)☆ 访问文件地址 http://localhost:${config.boot.port}/`.brightGreen)
 
