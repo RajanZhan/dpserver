@@ -106,6 +106,12 @@ module.exports = {
                  from: path.join(__dirname+`/static`),
                 to: path.join(__dirname, `../dist/bin/static`)
              }, 
+
+			 // 复制语言包
+             {
+                 from: path.join(__dirname+`/lang`),
+                to: path.join(__dirname, `../dist/bin/lang`)
+             }, 
 			 
 			 // 复制模板文件夹
              {

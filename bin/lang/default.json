@@ -1,0 +1,22 @@
+{
+    //端口检测失败
+    "portCheckError":"端口可能已经被占用",
+
+    // 解析配置文件提醒
+    "parsingConfig":"配置文件解析中...",
+
+    // 进程启动发生异常
+    "processBootError":"启动发生异常",
+
+    // 进程启动成功提示
+    "processBootSuccess":"(*^▽^*) DpServer 启动成功",
+   
+    // 进程启动成功，端口提示
+    "processBootSuccessPort":"(^_−)☆ 服务监听的端口为",
+    
+    // 进程启动成功，端口提示
+    "processBootSuccessPortUrl":"(^_−)☆ 访问地址 http://localhost:",
+
+    // 静态文件目录尚未配置
+    "staticPathError":"尚未配置静态文件目录"
+}
