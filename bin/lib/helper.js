@@ -18,7 +18,27 @@ var bootError = exports.syncExit;
 // 读取配置文件
 exports.getConfig = () => {
     var config = null;
-    const configPath = path.join(__dirname, "../../config.ini");
+    var configPath = null;
+    var configPath1 = path.join(__dirname, "../config.ini");
+    var configPath2 = path.join(__dirname, "./config.ini");
+    var configPath3 = path.join(__dirname, "../../config.ini");
+    if(fs.existsSync(configPath1))
+    {
+        configPath = configPath1;
+    }
+    else if(fs.existsSync(configPath2))
+    {
+        configPath = configPath2;
+    }
+    else if(fs.existsSync(configPath3))
+    {
+        configPath = configPath3;
+    }
+    else
+    {
+       return bootError("配置信息读取失败");
+    }
+
     if (fs.existsSync(configPath)) {
         config = ini.parse(fs.readFileSync(configPath, "UTF-8"));
         if (!config.boot) {
